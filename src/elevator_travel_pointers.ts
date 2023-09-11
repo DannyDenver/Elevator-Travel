@@ -1,10 +1,10 @@
 import { configs } from "../config";
 
+// sliding window; tests took 9.36 s
 export let elevator_travel_time_pointer = (current_floor: number, floors: number[]): [number, number[]] => {
     const floors_visited = [current_floor, ...floors]
     let floors_traveled = 0
 
-    // sliding window; tests took 9.36 s
     let starting_floor = current_floor
     let goingDown = floors[0] < floors[1]
 

@@ -31,7 +31,9 @@ npm test
     * many trips with high weight to shopping floor but low revenue
     * many trips to rooftop patio at night but not during the day 
         - invest in night lighting not umbrellas
-- Send automated messages to maintenance team if elevator is acting strangely 
+- Send automated messages to maintenance team if elevator is acting strangely
     * elevator doesn't arrive at floors at expected times
 - Analayze weight of passengers 
     * Update velocity based on weight
+    * continuous monitoring 
+        - if weight oscillates very quickly and travel time is off, send urgent automated text message to maintenance team

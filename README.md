@@ -29,7 +29,9 @@ npm test
     * Negotiate with energy company to get special rates for specific time slots of high elevator electrical use
 - Analyze passenger behavior
     * many trips with high weight to shopping floor but low revenue
-    * many trips to rooftop patio at night but not during the day 
+    * many trips with high weight to specific floor between 11pm and 1am: probably party
+        - send cleaners automated message to check on floor
+    * many trips to rooftop patio at night but not during the day
         - invest in night lighting not umbrellas
 - Send automated messages to maintenance team if elevator is acting strangely
     * elevator doesn't arrive at floors at expected times

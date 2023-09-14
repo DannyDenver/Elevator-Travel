@@ -1,9 +1,8 @@
 import { configs } from "../config";
 
 // sliding window; tests took 9.36 s
-export let elevator_travel_time_pointer = (current_floor: number, floors: number[]): [number, number[]] => {
-    const floors_visited = [current_floor, ...floors]
-    let floors_traveled = 0
+export const elevator_travel_time_pointer = (current_floor: number, floors: number[]): ElevatorTravelResult => {
+    let total_travel_time = 0
 
     let starting_floor = current_floor
     let goingDown = floors[0] < floors[1]
@@ -12,20 +11,21 @@ export let elevator_travel_time_pointer = (current_floor: number, floors: number
         if (floors[i + 1]) {
             if (floor < floors[i + 1]) { // going up 
                 if (goingDown == true) {
-                    floors_traveled += Math.abs(starting_floor - floor)
-                    starting_floor = floor
-                    goingDown = false
+                    total_travel_time += Math.abs(starting_floor - floor);
+                    starting_floor = floor;
+                    goingDown = false;
                 }
             } else { // going down
                 if (goingDown == false) {
+                    total_travel_time += Math.abs(starting_floor - floor);
+                    starting_floor = floor;
                     goingDown = true;
-                    floors_traveled += Math.abs(starting_floor - floor)
-                    starting_floor = floor
                 }
             }
         } else {
-            floors_traveled += Math.abs(starting_floor - floor)
+            total_travel_time += Math.abs(starting_floor - floor)
         }
     })
-    return [floors_traveled * configs.seconds_per_floor, floors_visited];
+
+    return { total_travel_time: total_travel_time * configs.seconds_per_floor, floors_visited: [current_floor, ...floors]};
 }

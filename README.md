@@ -26,5 +26,12 @@ npm test
     * prioritize different floors - ie shopping level has priority over offices
     * slow or speed up elevator to pick up more people or transport faster
     * use machine learning ie tensorflow to decrease distance traveled to save electricity
+    * Negotiate with energy company to get special rates for specific time slots of high elevator electrical use
+- Analyze passenger behavior
+    * many trips with high weight to shopping floor but low revenue
+    * many trips to rooftop patio at night but not during the day 
+        - invest in night lighting not umbrellas
 - Send automated messages to maintenance team if elevator is acting strangely 
-- Analayze weight of passengers to update velocity or energy demand based on time of day
+    * elevator doesn't arrive at floors at expected times
+- Analayze weight of passengers 
+    * Update velocity based on weight
